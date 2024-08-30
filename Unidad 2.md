@@ -42,16 +42,16 @@ c) La falla B es la de mayor frecuencia.
 
 #### Ejercicio 4:
 _De una máquina que fabrica piezas especiales, se registra el número de piezas defectuosas producidas por día. Para un mes en particular (30 días), se conoce lo siguiente: Solo 1 día de los que estuvo en funcionamiento produjo 4 piezas defectuosas y ningún otro día superó ese valor. En 19 días no produjo piezas defectuosas. El 10% de los días produjo 2 piezas defectuosas. El 80% de los días produjo a lo sumo 1 pieza defectuosa._
-a) Plantee un objetivo de interés para el estudio.
-b) Determine unidad elemental, población y variable en estudio.
-c) Construya una tabla de frecuencias de la distribución del número diario de piezas defectuosas que produjo la máquina en el período considerado.
-d) Construya un gráfico que muestre los datos de la tabla.
+a) Plantee un objetivo de interés para el estudio.  
+b) Determine unidad elemental, población y variable en estudio.  
+c) Construya una tabla de frecuencias de la distribución del número diario de piezas defectuosas que produjo la máquina en el período considerado.  
+d) Construya un gráfico que muestre los datos de la tabla.  
 
 **Respuestas** 
-a) Un objetivo de interés puede ser _"Determinar la eficiencia del proceso a través del análisis de la distribución diaria del número de piezas defectuosas podrucidas por ésa máquina durante un mes"._
-b) Unidad elemental: cada día de producción. Población: todos los días de producción de la máquina durante un mes. Variable en estudio: número de piezas defectuosas producidas por la máquina, por día.
-c) Para construir la tabla de frecuencias primero debemos interpretar los datos, la variabla cantidad de piezas defectuosas toma los valores 0, 1, 2, 3 y 4. Luego, sabemos que a Y=4 le corresponde una frecuencia de 1; a Y=0 le corresponde una frecuencia de 19 (ya que fueron 19 días en los cuales no se registraron piezas defectuosas); a Y=2 le corresponde 3 y a Y=1 le corresponde (0.8*30)-19 = 5 días.
-En R podríamos armar la tabla con el siguiente código:
+a) Un objetivo de interés puede ser _"Determinar la eficiencia del proceso a través del análisis de la distribución diaria del número de piezas defectuosas podrucidas por ésa máquina durante un mes"._  
+b) Unidad elemental: cada día de producción. Población: todos los días de producción de la máquina durante un mes. Variable en estudio: número de piezas defectuosas producidas por la máquina, por día.  
+c) Para construir la tabla de frecuencias primero debemos interpretar los datos, la variabla cantidad de piezas defectuosas toma los valores 0, 1, 2, 3 y 4. Luego, sabemos que a Y=4 le corresponde una frecuencia de 1; a Y=0 le corresponde una frecuencia de 19 (ya que fueron 19 días en los cuales no se registraron piezas defectuosas); a Y=2 le corresponde 3 y a Y=1 le corresponde (0.8*30)-19 = 5 días.  
+En R podríamos armar la tabla con el siguiente código:  
 ```
 tabla_4<-data.frame(
    "Fallas"=c(0,1,2,3,4),
@@ -78,8 +78,8 @@ a) unidad de observación: llamada telefónica
 variable: tiempo de espera  
 población: todas las llamadas telefónicas  
 población estadística: todos los tiempos de espera del cliente  
-b) finita
-c) Si descargamos el archivo .xlsx podemos leer los datos de la siguiente manera, siempre y cuando hayamos seteado el directorio de trabajo y guardado el archivo en dicho directorio:
+b) finita  
+c) Si descargamos el archivo .xlsx podemos leer los datos de la siguiente manera, siempre y cuando hayamos seteado el directorio de trabajo y guardado el archivo en dicho directorio:  
 ```
 library("readxl")
 datos_7<- read_excel("Datos U2.xlsx", 
@@ -94,7 +94,7 @@ datos<-rename(datos_7, # indicamos el objeto sobre el que vamos a aplicar la fun
               Tiempo='Tiempo de espera') # indicamos primero a qué queremos cambiar y luego qué debe cambiar
 colnames(datos_7) # chequeamos el cambio
 ```
-_Considerando que el enunciado indica que son pocos datos diferentes, podemos realizar un diagrama de tallo y hoja_.
+_Considerando que el enunciado indica que son pocos datos diferentes, podemos realizar un diagrama de tallo y hoja_.  
 Utilizaremos la función stem de rbase, encontraremos la salida en la consola
 ```
 stem(datos_7$Tiempo) # con el símbolo $ indicamos sobre qué columna (variable) queremos que realice el diagrama
@@ -107,9 +107,9 @@ a) Construya un diagrama de tallo y hoja y un diagrama de puntos.
 b) Obtenga e interprete diferentes medidas de localización de este conjunto.  
 c) Indique si se trata de estadísticos o parámetros. Justifique  
 **Respuestas**  
-a) Ingresamos los datos corriendo la siguiente linea en la consola o script de trabajo:
+a) Ingresamos los datos corriendo la siguiente linea en la consola o script de trabajo:  
 ```
-datos_12<-data.frame("T_vida"=c(123,121,116,122,109,180,126,111,118,115,125,117,110,112,124)) # generamos un data frame con la columna llamada T_vida con los valores indicados"
+datos_12<-data.frame("T_vida"=c(123,121,116,122,109,180,126,111,118,115,125,117,110,112,124)) # generamos un data frame con la columna llamada T_vida con los valores indicados"  
 ```
 El diagrama de tallo y hoja puede verse en la consola o podemos pedirlo en la sección de plots:  
 ```
@@ -128,15 +128,15 @@ ggplot(datos_12, # indico qué objeto usar,
   scale_y_continuous(expand=c(0,0), NULL, breaks = NULL) + # elimino el eje y
   scale_x_continuous(breaks = seq(min(datos_12$T_vida), max(datos_12$T_vida), by = 5))  # ajusto 'by' para aumentar los valores observados en el eje de variación
 ```
-Como recomendación, se pueden ir graficando de a una las lineas (a excepción de la primera y segunda que deben ir juntas) para ver los cambios que cada una genera.
+Como recomendación, se pueden ir graficando de a una las lineas (a excepción de la primera y segunda que deben ir juntas) para ver los cambios que cada una genera.  
 
-b) Con el comando _summary_ obtenemos algunas medidas de posición:
+b) Con el comando _summary_ obtenemos algunas medidas de posición:  
 ```
 summary(datos_12)
 ```
 c) Los datos son obtenidos por muestreo por lo que se trata de estadísticos.  
 
-Podemos, además, pedir un boxplot utilizando rbase:
+Podemos, además, pedir un boxplot utilizando rbase:  
 ```
 boxplot(datos_12, 
         main= "Tiempo de vida de las baterías (horas)", 
@@ -144,37 +144,37 @@ boxplot(datos_12,
         col="lightgreen") 
 ```
 #### Ejercicio 16:
-_Reconsidere la Actividad 12, relativa al tiempo de vida de cierto tipo de baterías._
-a) Obtenga e interprete medidas de variabilidad.
-b) Indique cuál/es de estas medidas no se ven afectadas por la presencia de valores atípicos.
+_Reconsidere la Actividad 12, relativa al tiempo de vida de cierto tipo de baterías._  
+a) Obtenga e interprete medidas de variabilidad.  
+b) Indique cuál/es de estas medidas no se ven afectadas por la presencia de valores atípicos.  
 
 **Respuestas**  
-a) Con la función sd podemos obtener el desvío estándar como medida de dispersión:
+a) Con la función sd podemos obtener el desvío estándar como medida de dispersión:  
 ```
 sd(datos_12$T_vida) # debemos indicar la columna sobre la cual va a calcular el desvío estándar
 ```
-Otras medidas de dispersión pueden ser el rango y el rango intercuartílico:
+Otras medidas de dispersión pueden ser el rango y el rango intercuartílico:  
 ```
-range(datos_12$T_vida) # rango, valores máximos y mínimos observados
+range(datos_12$T_vida) # rango, valores máximos y mínimos observados  
 IQR(datos_12$T_vida) # máxima diferencia observada en el 50% central de los datos
 ```
-b) Tanto la media como el desvío estándar son suceptibles a valores extremos o atípicos por lo que, en nuestro caso es recomendable describir al conjunto de datos a través de Q2 (mediana) y el Rango o el Rango Intercuartil.
+b) Tanto la media como el desvío estándar son suceptibles a valores extremos o atípicos por lo que, en nuestro caso es recomendable describir al conjunto de datos a través de Q2 (mediana) y el Rango o el Rango Intercuartil.  
 
 #### Ejercicio 20:
-_Reconsidere la Actividad 4, relativa al número de piezas defectuosas producidas por día en una fábrica._
-a) Obtenga e interprete las medidas que se necesitan para construir el diagrama de caja y bigotes y constrúyalo.
-b) ¿Puede obtener alguna/s medida/s de dispersión a partir del diagrama de caja? Si es así, indique cuáles son e informe el valor de las mismas.
+_Reconsidere la Actividad 4, relativa al número de piezas defectuosas producidas por día en una fábrica._  
+a) Obtenga e interprete las medidas que se necesitan para construir el diagrama de caja y bigotes y constrúyalo.  
+b) ¿Puede obtener alguna/s medida/s de dispersión a partir del diagrama de caja? Si es así, indique cuáles son e informe el valor de las mismas.  
 **Respuestas**  
-a) Con la función 'summary' tenemos todas las medidas necesarias para construir el boxplot (Q1, Q2, Q3, min y max). Pero antes debemos reorganizar los datos para poder utilizar la función:
+a) Con la función 'summary' tenemos todas las medidas necesarias para construir el boxplot (Q1, Q2, Q3, min y max). Pero antes debemos reorganizar los datos para poder utilizar la función:  
 ```
 datos_20<- data.frame("x"=c(rep(0,19),rep(1,5),rep(2,3),rep(3,8),rep(4,1)))
 summary(datos_20)
 ```
-min= La menor cantidad de fallas observadas por día es 0
-Q1= El 25% de los días se obtuvieron piezas sin fallas
-Q2= El 50% de los días se obtuvieron piezas sin fallas
-Q3= El 75% de los días se obtuvieron piezas con 1 falla o menos
-max= El máximo de fallas obtenido es 4
+min= La menor cantidad de fallas observadas por día es 0  
+Q1= El 25% de los días se obtuvieron piezas sin fallas  
+Q2= El 50% de los días se obtuvieron piezas sin fallas  
+Q3= El 75% de los días se obtuvieron piezas con 1 falla o menos    
+max= El máximo de fallas obtenido es 4  
 b) A través del boxplot podemos obtener el rango y el rango intercuartil. El rango es 0-4 y el rango intercuartil es 2.25.
 
 ```
