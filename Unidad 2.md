@@ -47,7 +47,7 @@ b) Determine unidad elemental, población y variable en estudio.
 c) Construya una tabla de frecuencias de la distribución del número diario de piezas defectuosas que produjo la máquina en el período considerado.  
 d) Construya un gráfico que muestre los datos de la tabla.  
 
-**Respuestas** 
+**Respuestas**  
 a) Un objetivo de interés puede ser _"Determinar la eficiencia del proceso a través del análisis de la distribución diaria del número de piezas defectuosas podrucidas por ésa máquina durante un mes"._  
 b) Unidad elemental: cada día de producción. Población: todos los días de producción de la máquina durante un mes. Variable en estudio: número de piezas defectuosas producidas por la máquina, por día.  
 c) Para construir la tabla de frecuencias primero debemos interpretar los datos, la variabla cantidad de piezas defectuosas toma los valores 0, 1, 2, 3 y 4. Luego, sabemos que a Y=4 le corresponde una frecuencia de 1; a Y=0 le corresponde una frecuencia de 19 (ya que fueron 19 días en los cuales no se registraron piezas defectuosas); a Y=2 le corresponde 3 y a Y=1 le corresponde (0.8*30)-19 = 5 días.  
