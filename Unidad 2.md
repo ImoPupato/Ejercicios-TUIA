@@ -1,4 +1,4 @@
-#### Ejercicio 2:
+### Ejercicio 2:
 _La gerenta de operaciones de una planta desea estudiar las fallas que se observan en el proceso de envasado. Los datos sin procesar que se muestran a continuación, corresponden a la falla
 principal registrada en 50 envases con fallas, los cuales se tomaron de la producción de una semana. Se codificó con A al etiquetado incorrecto, con B al envase roto, con C al envase
 manchado, con D al envase arrugado, con E al etiquetado ilegible y con F al envase agrietado._  
@@ -40,7 +40,7 @@ barplot(table(datos_2), # datos
 Les recomendamos explorar todas las opciones que la funcion barplot ofrece para mejorar nuestro gráfico, pueden acceder al siguiente [link](https://r-coder.com/grafico-barras-r/).  
 c) La falla B es la de mayor frecuencia.
 
-#### Ejercicio 4:
+### Ejercicio 4:
 _De una máquina que fabrica piezas especiales, se registra el número de piezas defectuosas producidas por día. Para un mes en particular (30 días), se conoce lo siguiente: Solo 1 día de los que estuvo en funcionamiento produjo 4 piezas defectuosas y ningún otro día superó ese valor. En 19 días no produjo piezas defectuosas. El 10% de los días produjo 2 piezas defectuosas. El 80% de los días produjo a lo sumo 1 pieza defectuosa._
 a) Plantee un objetivo de interés para el estudio.  
 b) Determine unidad elemental, población y variable en estudio.  
@@ -66,7 +66,7 @@ barplot(tabla_4$Días~tabla_4$Fallas, # con el ~ indicamos y vs x
         space=c(3, 3, 3, 3), # ajustamos las distancias entre bastones o barras
         col="lightgreen") # asignamos un color
 ```
-#### Ejercicio 7:
+### Ejercicio 7:
 _Los siguientes datos corresponden a 20 observaciones del tiempo (en segundos) que un cliente esperó al teléfono al representante de un determinado servicio: 7 - 7 - 15 - 21 - 15 - 22 - 40 - 8 - 40 - 6 - 18 - 14 - 5 - 7 - 8 - 3 - 8 - 4 - 40 - 5_  
 a) Identifique unidad de observación, población, población estadística.  
 b) Indique si la población es finita o infinita.  
@@ -101,11 +101,12 @@ stem(datos_7$Tiempo) # con el símbolo $ indicamos sobre qué columna (variable)
 ```
 d) Tiempo de espera promedio.  
 
-#### Ejercicio 12:
+### Ejercicio 12:
 _Un fabricante de componentes electrónicos está interesado en conocer el comportamiento del tiempo de vida de cierto tipo de baterías para computadoras que produce. Para ello analiza la duración (en horas) de una muestra de 15 baterías y obtiene los siguientes valores: 123 - 121 - 116 - 122 - 109 - 180 - 126 - 111 - 118 - 115 - 125 - 117 - 110 - 112 - 124_
 a) Construya un diagrama de tallo y hoja y un diagrama de puntos.  
 b) Obtenga e interprete diferentes medidas de localización de este conjunto.  
 c) Indique si se trata de estadísticos o parámetros. Justifique  
+
 **Respuestas**  
 a) Ingresamos los datos corriendo la siguiente linea en la consola o script de trabajo:  
 ```
@@ -143,7 +144,7 @@ boxplot(datos_12,
         horizontal=TRUE, 
         col="lightgreen") 
 ```
-#### Ejercicio 16:
+### Ejercicio 16:
 _Reconsidere la Actividad 12, relativa al tiempo de vida de cierto tipo de baterías._  
 a) Obtenga e interprete medidas de variabilidad.  
 b) Indique cuál/es de estas medidas no se ven afectadas por la presencia de valores atípicos.  
@@ -160,10 +161,11 @@ IQR(datos_12$T_vida) # máxima diferencia observada en el 50% central de los dat
 ```
 b) Tanto la media como el desvío estándar son suceptibles a valores extremos o atípicos por lo que, en nuestro caso es recomendable describir al conjunto de datos a través de Q2 (mediana) y el Rango o el Rango Intercuartil.  
 
-#### Ejercicio 20:
+### Ejercicio 20:
 _Reconsidere la Actividad 4, relativa al número de piezas defectuosas producidas por día en una fábrica._  
 a) Obtenga e interprete las medidas que se necesitan para construir el diagrama de caja y bigotes y constrúyalo.  
 b) ¿Puede obtener alguna/s medida/s de dispersión a partir del diagrama de caja? Si es así, indique cuáles son e informe el valor de las mismas.  
+
 **Respuestas**  
 a) Con la función 'summary' tenemos todas las medidas necesarias para construir el boxplot (Q1, Q2, Q3, min y max). Pero antes debemos reorganizar los datos para poder utilizar la función:  
 ```
