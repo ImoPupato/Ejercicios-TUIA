@@ -55,7 +55,7 @@ En R podríamos armar la tabla con el siguiente código:
 ```
 tabla_4<-data.frame(
    "Fallas"=c(0,1,2,3,4),
-   "Frecuencia"=c(19,5,3,8,1))
+   "Frecuencia"=c(19,5,3,2,1))
 ```
 d)
 ```
@@ -85,10 +85,10 @@ library("readxl")
 datos_7<- read_excel("Datos U2.xlsx", 
                    sheet = "ej 7") #se indica la hoja donde están los datos a copiar
 ```
-Para renombrar la columa podemos utilizar la función 'colnames' de rbase pero vamos usar otro recurso y comenzar a introducirnos en el universo de [Tydiverse](https://www.tidyverse.org/packages/), que es un conjunto de paquetes que permiten mejorar el acceso, manipulación y visualización de datos.
+Para renombrar la columa podemos utilizar la función 'colnames' de rbase pero vamos usar otro recurso y comenzar a introducirnos en el universo de [Tidyverse](https://www.tidyverse.org/packages/), que es un conjunto de paquetes que permiten mejorar el acceso, manipulación y visualización de datos.
 ```
-install.packages("tydiverse")
-library("tydiverse")
+install.packages("tidyverse")
+library("tidyverse")
 colnames(datos_7) # chequeamos el nombre
 datos<-rename(datos_7, # indicamos el objeto sobre el que vamos a aplicar la función
               Tiempo='Tiempo de espera') # indicamos primero a qué queremos cambiar y luego qué debe cambiar
@@ -119,7 +119,7 @@ plot.new() # si quiero verlo en la sección de plots
 out <- capture.output(stem(datos$T_vida, scale = 2)) # que va en la salida
 text(0, 1, paste(out, collapse = "\n"), adj = c(0, 1))
 ```
-Para realizar el gráfico de puntos, utilizaremos la función ggplot de tydiverse. Para comprender la sintaxis de ggplot, que se realiza en capas, puede recurrirse a la [CheatSheet](https://github.com/ImoPupato/Ejercicios-TUIA/blob/main/CheatSheet-ggplot2.pdf).
+Para realizar el gráfico de puntos, utilizaremos la función ggplot de tidyverse. Para comprender la sintaxis de ggplot, que se realiza en capas, puede recurrirse a la [CheatSheet](https://github.com/ImoPupato/Ejercicios-TUIA/blob/main/CheatSheet-ggplot2.pdf).
 ```
 ggplot(datos_12, # indico qué objeto usar, 
   aes(T_vida)) + # qué variable mapear
@@ -169,7 +169,7 @@ b) ¿Puede obtener alguna/s medida/s de dispersión a partir del diagrama de caj
 **Respuestas**  
 a) Con la función 'summary' tenemos todas las medidas necesarias para construir el boxplot (Q1, Q2, Q3, min y max). Pero antes debemos reorganizar los datos para poder utilizar la función:  
 ```
-datos_20<- data.frame("x"=c(rep(0,19),rep(1,5),rep(2,3),rep(3,8),rep(4,1)))
+datos_20<- data.frame("x"=c(rep(0,19),rep(1,5),rep(2,3),rep(3,2),rep(4,1)))
 summary(datos_20)
 ```
 min= La menor cantidad de fallas observadas por día es 0  
@@ -177,7 +177,7 @@ Q1= El 25% de los días se obtuvieron piezas sin fallas
 Q2= El 50% de los días se obtuvieron piezas sin fallas  
 Q3= El 75% de los días se obtuvieron piezas con 1 falla o menos    
 max= El máximo de fallas obtenido es 4  
-b) A través del boxplot podemos obtener el rango y el rango intercuartil. El rango es 0-4 y el rango intercuartil es 2.25.
+b) A través del boxplot podemos obtener el rango y el rango intercuartil. El rango es 0-4 y el rango intercuartil es 1.
 
 ```
 boxplot(data,
